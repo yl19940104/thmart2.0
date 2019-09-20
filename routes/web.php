@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+//管理后台相关
+Route::prefix('Admin')->namespace('Admin')->group(function () {
+    Route::get('/','IndexController@index');
+});

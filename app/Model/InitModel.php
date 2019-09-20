@@ -8,6 +8,7 @@ class InitModel extends Model
     protected $topCategory = [];
     protected $supplier = [];
     protected $brand = [];
+    protected $attribute = [];
 
     protected $data = array('err' => true, 'code' => '999', 'msg' => 'init error');
 
@@ -15,6 +16,7 @@ class InitModel extends Model
         $this->getSpu();
         $this->getSupplier();
         $this->getBrand();
+        $this->getAttribute();
     }
 
     protected function getSpu() {
@@ -29,6 +31,10 @@ class InitModel extends Model
 
     }
 
+    protected function getAttribute() {
+
+    }
+
     protected function chkSpu() {
 
     }
@@ -38,6 +44,10 @@ class InitModel extends Model
     }
 
     protected function chkBrand() {
+
+    }
+
+    protected function chkAttribute() {
 
     }
 }
