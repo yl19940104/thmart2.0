@@ -17,5 +17,9 @@ Route::get('/', function () {
 
 //管理后台相关
 Route::prefix('Admin')->namespace('Admin')->group(function () {
+    //用户登录
+    Route::get('login', 'LoginController@index');
+    Route::post('login', 'LoginController@login');
+    Route::get('logout', 'LoginController@logout');
     Route::get('/','IndexController@index');
 });
