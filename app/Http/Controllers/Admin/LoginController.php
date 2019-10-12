@@ -9,6 +9,11 @@ use Illuminate\Http\Request;
 class LoginController extends Controller
 {
 
+    public function __construct()
+    {
+
+    }
+
     public function index(Request $request)
     {
         return view('auth.alogin');
@@ -24,6 +29,12 @@ class LoginController extends Controller
         } else {
             returnJson(0, 'wrong username or password');
         }
+    }
+
+    //logout
+    public function logout(){
+        session()->flush();
+        return redirect('Admin/');
     }
 
     public function chkUserAuth($username,$passward){
@@ -55,7 +66,7 @@ class LoginController extends Controller
             session(['admin_tokencode' => 'tokencode']);
             session(['admin_username' => $username]);
             session(['group' => array('')]);
-
+            session()->save();
             return true;
         }else{
             return false;
